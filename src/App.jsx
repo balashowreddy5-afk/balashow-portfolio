@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import regulynDashboard from "./assets/projects/regulyn-dashboard.png";
 import registryConnectHome from "./assets/projects/registry-connect-home.png";
 import "./App.css";
@@ -8,19 +8,22 @@ const SKILLS = [
   {
     number: "01",
     title: "Frontend",
-    description: "Building responsive, component-based user interfaces and modern web experiences.",
+    description:
+      "Building responsive, component-based user interfaces and modern web experiences.",
     tags: ["React", "JavaScript", "HTML5", "CSS3", "Vite"],
   },
   {
     number: "02",
     title: "Backend",
-    description: "Creating application logic, APIs and server-side functionality for full-stack applications.",
+    description:
+      "Creating application logic, APIs and server-side functionality for full-stack applications.",
     tags: ["Node.js", "REST APIs", "Authentication", "CRUD"],
   },
   {
     number: "03",
     title: "Database & Tools",
-    description: "Working with application data, version control and production deployment workflows.",
+    description:
+      "Working with application data, version control and production deployment workflows.",
     tags: ["PostgreSQL", "Prisma", "Git", "GitHub", "Render"],
   },
 ];
@@ -72,28 +75,66 @@ const PROJECTS = [
 ];
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <div className="portfolio">
       <header className="navbar">
-        <a className="logo" href="#home">
+        <a
+          className="logo"
+          href="#home"
+          aria-label="Balashow Reddy Basani — Home"
+          onClick={closeMenu}
+        >
           BR<span>.</span>
         </a>
 
-        <nav>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+        <nav
+          id="primary-navigation"
+          className={menuOpen ? "nav-links nav-links-open" : "nav-links"}
+        >
+          <a href="#home" onClick={closeMenu}>
+            Home
+          </a>
+
+          <a href="#about" onClick={closeMenu}>
+            About
+          </a>
+
+          <a href="#skills" onClick={closeMenu}>
+            Skills
+          </a>
+
+          <a href="#projects" onClick={closeMenu}>
+            Projects
+          </a>
+
+          <a href="#contact" onClick={closeMenu}>
+            Contact
+          </a>
         </nav>
 
         <a className="nav-button" href="#contact">
           Let's Talk
-        </a>
+          </a>
+   <button
+  type="button"
+  className="menu-button"
+  aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+  aria-expanded={menuOpen}
+  aria-controls="primary-navigation"
+  onClick={() => setMenuOpen((open) => !open)}
+>
+  {menuOpen ? "✕" : "☰"}
+</button>
       </header>
 
       <main>
-        {/* --- Hero Section --- */}
+        {/* Hero Section */}
         <section className="hero" id="home">
           <div className="hero-content">
             <p className="hero-label">FULL-STACK WEB DEVELOPER</p>
@@ -107,8 +148,9 @@ function App() {
             </h1>
 
             <p className="hero-description">
-              I'm Balashow Reddy Basani, a web developer focused on building clean,
-              responsive and practical applications using modern web technologies.
+              I'm Balashow Reddy Basani, a web developer focused on building
+              clean, responsive and practical applications using modern web
+              technologies.
             </p>
 
             <div className="hero-actions">
@@ -145,7 +187,8 @@ function App() {
                 </p>
 
                 <p className="indent">
-                  name: <span className="green">"Balashow Reddy Basani"</span>,
+                  name:{" "}
+                  <span className="green">"Balashow Reddy Basani"</span>,
                 </p>
 
                 <p className="indent">
@@ -153,13 +196,13 @@ function App() {
                 </p>
 
                 <p className="indent">
-                  builds: [
-                  <span className="green">"SaaS"</span>,{" "}
+                  builds: [<span className="green">"SaaS"</span>,{" "}
                   <span className="green">"Web Apps"</span>],
                 </p>
 
                 <p className="indent">
-                  focus: <span className="green">"Real-world solutions"</span>
+                  focus:{" "}
+                  <span className="green">"Real-world solutions"</span>
                 </p>
 
                 <p>{"};"}</p>
@@ -175,7 +218,7 @@ function App() {
           </div>
         </section>
 
-        {/* --- About Section --- */}
+        {/* About Section */}
         <section className="about-section" id="about">
           <div className="section-heading">
             <p className="section-label">ABOUT ME</p>
@@ -188,21 +231,23 @@ function App() {
           <div className="about-grid">
             <div className="about-content">
               <p className="about-lead">
-                I build modern web applications with a focus on clean interfaces,
-                practical functionality and real-world business needs.
+                I build modern web applications with a focus on clean
+                interfaces, practical functionality and real-world business
+                needs.
               </p>
 
               <p>
                 My development experience includes building responsive React
-                applications, creating reusable components, working with APIs and
-                databases, implementing authentication and CRUD functionality, and
-                deploying production-ready web applications.
+                applications, creating reusable components, working with APIs
+                and databases, implementing authentication and CRUD
+                functionality, and deploying production-ready web
+                applications.
               </p>
 
               <p>
-                I've built projects including a business registry platform and a
-                compliance management application, taking them from initial concept
-                through development and deployment.
+                I've built projects including a business registry platform and
+                a compliance management application, taking them from initial
+                concept through development and deployment.
               </p>
             </div>
 
@@ -230,7 +275,7 @@ function App() {
           </div>
         </section>
 
-        {/* --- Skills Section --- */}
+        {/* Skills Section */}
         <section className="skills-section" id="skills">
           <div className="section-heading">
             <p className="section-label">TECHNICAL SKILLS</p>
@@ -244,7 +289,9 @@ function App() {
             {SKILLS.map((skill) => (
               <article key={skill.number} className="skill-card">
                 <p className="skill-number">{skill.number}</p>
+
                 <h3>{skill.title}</h3>
+
                 <p>{skill.description}</p>
 
                 <div className="skill-tags">
@@ -257,7 +304,7 @@ function App() {
           </div>
         </section>
 
-        {/* --- Projects Section --- */}
+        {/* Projects Section */}
         <section className="projects-section" id="projects">
           <div className="section-heading">
             <p className="section-label">SELECTED PROJECTS</p>
@@ -271,7 +318,11 @@ function App() {
             {PROJECTS.map((project) => (
               <article key={project.id} className="project-card">
                 <div className="project-image">
-                  <img src={project.image} alt={project.alt} loading="lazy" />
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    loading="lazy"
+                  />
                 </div>
 
                 <div className="project-top">
@@ -283,7 +334,9 @@ function App() {
                   <span className="project-status">{project.status}</span>
                 </div>
 
-                <p className="project-description">{project.description}</p>
+                <p className="project-description">
+                  {project.description}
+                </p>
 
                 <div className="project-features">
                   {project.features.map((feature) => (
@@ -293,6 +346,7 @@ function App() {
 
                 <div className="project-footer">
                   <div className="project-stack">{project.stack}</div>
+
                   <a
                     href={project.liveUrl}
                     target="_blank"
@@ -307,7 +361,7 @@ function App() {
           </div>
         </section>
 
-        {/* --- Contact & Footer Section --- */}
+        {/* Contact & Footer Section */}
         <section className="contact-section" id="contact">
           <div className="contact-card">
             <div>
@@ -319,8 +373,8 @@ function App() {
               </h2>
 
               <p className="contact-description">
-                I'm open to remote web development opportunities, freelance projects
-                and collaborations with clients and teams worldwide.
+                I'm open to remote web development opportunities, freelance
+                projects and collaborations with clients and teams worldwide.
               </p>
             </div>
 
