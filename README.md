@@ -1,16 +1,92 @@
-# React + Vite
+# Balashow Reddy Basani — Full-Stack Web Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This repository contains my personal developer portfolio, built to showcase my full-stack web development work, technical skills, and deployed projects.
 
-Currently, two official plugins are available:
+## Live Portfolio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://balashow-portfolio.onrender.com
 
-## React Compiler
+## About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I am Balashow Reddy Basani, a full-stack web developer focused on building responsive web applications, SaaS-style platforms, and practical business software.
 
-## Expanding the Oxlint configuration
+My current work includes frontend development with React and JavaScript, backend development with Node.js and REST APIs, database work with PostgreSQL and Prisma, and deployment to production using Render.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Featured Projects
+
+### Regulyn
+
+A compliance management platform for managing obligations, risks, tasks, evidence, reviews, frameworks, reports, team activity, and compliance status from a central dashboard.
+
+Live:
+https://regulyn.onrender.com/login
+
+Tech stack:
+
+- React
+- JavaScript
+- Node.js
+- PostgreSQL
+- Prisma
+- REST APIs
+
+Key areas:
+
+- Compliance dashboard
+- Risk management
+- Task management
+- Evidence tracking
+- Authentication
+- Role-based access
+- Reporting
+- Team management
+
+### Registry Connect
+
+A business registry and compliance management platform designed to manage company information, documents, compliance requirements, and business records.
+
+Live:
+https://registry-connect.onrender.com
+
+Tech stack:
+
+- React
+- JavaScript
+- Vite
+- Node.js
+- REST APIs
+- Render
+
+Key areas:
+
+- Responsive user interface
+- Authentication
+- Multi-page public experience
+- Business management workflows
+- SEO optimization
+- Server-side prerendering
+- Production deployment
+- Security headers
+
+## Portfolio Tech Stack
+
+- React
+- JavaScript
+- Vite
+- HTML5
+- CSS3
+- Git
+- GitHub
+- Render
+
+## Project Structure
+
+```text
+src/
+├── assets/
+│   └── projects/
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
+```
