@@ -21,9 +21,9 @@ const SKILLS = [
   },
   {
     number: "03",
-    title: "Database & Tools",
+    title: "Database & Production",
     description:
-      "Working with application data, version control and production deployment workflows.",
+      "Working with persistent application data, version control and production deployment workflows.",
     tags: ["PostgreSQL", "Prisma", "Git", "GitHub", "Render"],
   },
 ];
@@ -36,8 +36,10 @@ const PROJECTS = [
     status: "Live Project",
     image: regulynDashboard,
     alt: "Regulyn compliance dashboard",
+
     description:
-      "A compliance management platform designed to help organizations manage obligations, risks, tasks, evidence, reviews, frameworks, reports and team activity from a central dashboard.",
+      "A full-stack compliance management application built to help organizations manage obligations, risks, tasks, evidence, reviews, frameworks, reporting and team activity from one centralized workspace.",
+
     features: [
       "Compliance Dashboard",
       "Risk Management",
@@ -48,9 +50,19 @@ const PROJECTS = [
       "PostgreSQL",
       "Prisma",
     ],
+
+    highlights: [
+      "Built a centralized compliance dashboard with status metrics and priority actions",
+      "Implemented workflows for obligations, risks, tasks, evidence and reviews",
+      "Added authentication and role-based access for protected application areas",
+      "Used PostgreSQL and Prisma for persistent application data",
+      "Deployed the full application to a live production environment",
+    ],
+
     stack: "React · Node.js · PostgreSQL · Prisma",
-    liveUrl: "https://regulyn.onrender.com/login",
+    liveUrl: "https://regulyn.onrender.com/home",
   },
+
   {
     id: "registry-connect",
     type: "BUSINESS PLATFORM",
@@ -58,8 +70,10 @@ const PROJECTS = [
     status: "Live Project",
     image: registryConnectHome,
     alt: "Registry Connect homepage",
+
     description:
-      "A modern business registry platform built to provide a clean and professional experience for managing company information, compliance, documents and business records.",
+      "A business registry and compliance platform built to provide a responsive public experience for company management, documents, compliance requirements and business records.",
+
     features: [
       "Responsive UI",
       "Multi-Page Experience",
@@ -69,6 +83,15 @@ const PROJECTS = [
       "Secure Headers",
       "Production Deployment",
     ],
+
+    highlights: [
+      "Built responsive public pages and authenticated application areas",
+      "Implemented company, compliance and document-management workflows",
+      "Added route-specific SEO metadata and prerendered HTML",
+      "Configured security headers and search-engine controls for private routes",
+      "Deployed the frontend and production application infrastructure on Render",
+    ],
+
     stack: "React · Vite · JavaScript · Render",
     liveUrl: "https://registry-connect.onrender.com",
   },
@@ -148,7 +171,7 @@ function App() {
             </h1>
 
             <p className="hero-description">
-              I'm Balashow Reddy Basani, a web developer focused on building
+              I'm Balashow Reddy Basani, a full-stack web developer focused on building
               clean, responsive and practical applications using modern web
               technologies.
             </p>
@@ -231,23 +254,15 @@ function App() {
           <div className="about-grid">
             <div className="about-content">
               <p className="about-lead">
-                I build modern web applications with a focus on clean
-                interfaces, practical functionality and real-world business
-                needs.
+                I build modern full-stack web applications focused on clean interfaces, practical functionality and real-world business needs.
               </p>
 
               <p>
-                My development experience includes building responsive React
-                applications, creating reusable components, working with APIs
-                and databases, implementing authentication and CRUD
-                functionality, and deploying production-ready web
-                applications.
+               My experience includes building responsive React interfaces, developing backend functionality with Node.js, working with REST APIs, PostgreSQL and Prisma, and implementing authentication, role-based access and CRUD workflows.
               </p>
 
               <p>
-                I've built projects including a business registry platform and
-                a compliance management application, taking them from initial
-                concept through development and deployment.
+                I've built and deployed two substantial projects — Regulyn, a compliance management platform, and Registry Connect, a business registry platform — taking them from initial concept through development and production deployment.
               </p>
             </div>
 
@@ -339,12 +354,22 @@ function App() {
                 </p>
 
                 <div className="project-features">
-                  {project.features.map((feature) => (
-                    <span key={feature}>{feature}</span>
-                  ))}
-                </div>
+  {project.features.map((feature) => (
+    <span key={feature}>{feature}</span>
+  ))}
+</div>
 
-                <div className="project-footer">
+<div className="project-highlights">
+  <p className="project-highlights-title">WHAT I BUILT</p>
+
+  <ul>
+    {project.highlights.map((highlight) => (
+      <li key={highlight}>{highlight}</li>
+    ))}
+  </ul>
+</div>
+
+<div className="project-footer">
                   <div className="project-stack">{project.stack}</div>
 
                   <a
@@ -373,8 +398,7 @@ function App() {
               </h2>
 
               <p className="contact-description">
-                I'm open to remote web development opportunities, freelance
-                projects and collaborations with clients and teams worldwide.
+               I'm available for remote full-stack development opportunities, freelance projects and collaborations with clients and teams worldwide.
               </p>
             </div>
 
